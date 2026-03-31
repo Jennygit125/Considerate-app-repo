@@ -6,8 +6,14 @@ function initializeHeroImages() {
   const secondaryHeroImages = document.querySelectorAll(
     ".hero-image:not(.is-primary)",
   );
-  const shouldRunCarousel = window.matchMedia("(min-width: 769px)").matches
-    && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const canMatchMedia = typeof window.matchMedia === "function";
+  const prefersDesktopLayout = canMatchMedia
+    ? window.matchMedia("(min-width: 769px)").matches
+    : true;
+  const prefersReducedMotion = canMatchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
+  const shouldRunCarousel = prefersDesktopLayout && !prefersReducedMotion;
 
   if (!body || !firstHeroImage) {
     return;
@@ -20,10 +26,12 @@ function initializeHeroImages() {
 
   const startCarousel = () => {
     secondaryHeroImages.forEach((image) => {
-      if (image instanceof HTMLImageElement && image.dataset.src) {
-        image.loading = "lazy";
-        image.fetchPriority = "low";
-        image.src = image.dataset.src;
+      const dataSource = image.getAttribute("data-src");
+
+      if (dataSource) {
+        image.setAttribute("loading", "lazy");
+        image.setAttribute("fetchpriority", "low");
+        image.setAttribute("src", dataSource);
       }
     });
 
