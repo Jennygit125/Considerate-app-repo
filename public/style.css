@@ -1,6 +1,24 @@
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, rgba(179, 138, 58, 0.35), transparent 45%),
+        linear-gradient(180deg, #1f3425 0%, #101813 100%);
+}
+
 * {
     margin: 0;
     font-family: "Playfair Display", serif;
+}
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
 }
 
 .pasta-logo-img {
@@ -9,6 +27,8 @@
     height: 3rem;
     width: auto;
     display: inline-block;
+    aspect-ratio: 242 / 233;
+    object-fit: contain;
 }
 
 button {
@@ -72,7 +92,7 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     z-index: 10;
-    height: 2rem;
+    min-height: 4rem;
     width: 100vw;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -84,6 +104,7 @@ header {
     align-items: center;
     align-content: center;
     justify-content: center;
+    overflow: visible;
 }
 
 .content {
@@ -116,9 +137,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background:
+        linear-gradient(180deg, rgba(16, 24, 19, 0.2), rgba(16, 24, 19, 0.7)),
+        linear-gradient(135deg, #b38a3a 0%, #1f3425 55%, #101813 100%);
 }
 
-.crossfade-container img {
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -126,23 +150,42 @@ header {
     height: 100%;
     object-fit: cover;
     opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+body.hero-ready .hero-image {
     animation: imageFade 20s linear infinite;
 }
 
-.crossfade-container img:nth-child(2) {
+.hero-image.is-primary {
+    opacity: 1;
+}
+
+body.hero-ready .hero-image.is-primary {
+    animation: firstImageFade 20s linear infinite;
+}
+
+body.hero-ready .hero-image:nth-of-type(2) {
     animation-delay: 4s;
 }
 
-.crossfade-container img:nth-child(3) {
+body.hero-ready .hero-image:nth-of-type(3) {
     animation-delay: 8s;
 }
 
-.crossfade-container img:nth-child(4) {
+body.hero-ready .hero-image:nth-of-type(4) {
     animation-delay: 12s;
 }
 
-.crossfade-container img:nth-child(5) {
+body.hero-ready .hero-image:nth-of-type(5) {
     animation-delay: 16s;
+}
+
+@keyframes firstImageFade {
+    0% { opacity: 1; }
+    20% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 @keyframes imageFade {

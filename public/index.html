@@ -8,13 +8,25 @@
         name="description"
         content="Mija's Pasta restaurant landing page."
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="pasta/logo.png" as="image" type="image/png">
+    <link rel="preload" href="pasta/pasta1.webp" as="image" type="image/webp">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo-brand">
-            <img src="pasta/logo.png" alt="Mija's Pasta Logo" class="pasta-logo-img">
+            <img
+                src="pasta/logo.png"
+                alt="Mija's Pasta Logo"
+                class="pasta-logo-img"
+                width="242"
+                height="233"
+                fetchpriority="high"
+                decoding="async"
+            >
         </div>
         <button id="logo-btn">Mija's <strong>Pasta</strong></button>
         <nav>
@@ -25,11 +37,45 @@
     </header>
     <div id="pasta"></div>
     <div class="crossfade-container">
-        <img src="pasta/pasta1.webp" alt="Slide 1">
-        <img src="pasta/pasta2.webp" alt="Slide 2">
-        <img src="pasta/pasta3.webp" alt="Slide 3">
-        <img src="pasta/pasta4.webp" alt="Slide 4">
-        <img src="pasta/pasta5.webp" alt="Slide 5">
+        <img
+            src="pasta/pasta1.webp"
+            alt=""
+            class="hero-image is-primary"
+            fetchpriority="high"
+            decoding="async"
+        >
+        <img
+            src="pasta/pasta2.webp"
+            alt=""
+            class="hero-image"
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+        >
+        <img
+            src="pasta/pasta3.webp"
+            alt=""
+            class="hero-image"
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+        >
+        <img
+            src="pasta/pasta4.webp"
+            alt=""
+            class="hero-image"
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+        >
+        <img
+            src="pasta/pasta5.webp"
+            alt=""
+            class="hero-image"
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+        >
 
         <div class="content" id="content"></div>
     </div>
