@@ -8,7 +8,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "build:bundle": "webpack --mode production",
-    "watch": "webpack --watch --mode development",
+    "watch": "node scripts/build.mjs --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

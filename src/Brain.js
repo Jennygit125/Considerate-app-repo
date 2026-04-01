@@ -10,3 +10,18 @@ export function createRestaurantHomePage() {
     console.error("Element with ID 'content' not found");
   }
 }
+
+export const pageRenderers = {
+  home: createRestaurantHomePage,
+};
+
+export function notifyMissingPage(pageName) {
+  const message = `${pageName} page not generated.`;
+
+  if (typeof window !== "undefined" && typeof window.alert === "function") {
+    window.alert(message);
+    return;
+  }
+
+  console.warn(message);
+}
