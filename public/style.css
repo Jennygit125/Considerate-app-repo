@@ -5,8 +5,8 @@ body {
 
 body {
     background:
-        radial-gradient(circle at top, rgba(179, 138, 58, 0.35), transparent 45%),
-        linear-gradient(180deg, #1f3425 0%, #101813 100%);
+        radial-gradient(circle at top, rgba(215, 245, 222, 0.35), transparent 45%),
+        linear-gradient(180deg, #83f7e7 0%, #1309a1 100%);
 }
 
 * {
