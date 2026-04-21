@@ -26,22 +26,22 @@ function renderPage(title, description, content) {
 
 const menuData = {
   foodItems: [
-    { name: "Food Menu 01", price: "$15", desc: "Food with quality ingredients and delicious taste." },
-    { name: "Food Menu 02", price: "$20", desc: "Food with quality ingredients and delicious taste." },
-    { name: "Food Menu 03", price: "$35", desc: "Food with quality ingredients and delicious taste." },
-    { name: "Food Menu 04", price: "$40", desc: "Food with quality ingredients and delicious taste." },
-    { name: "Food Menu 05", price: "$55", desc: "Food with quality ingredients and delicious taste." },
-    { name: "Food Menu 06", price: "$15", desc: "Food with quality ingredients and delicious taste." },
-    { name: "Food Menu 07", price: "$15", desc: "Food with quality ingredients and delicious taste." },
+    { name: "Food Menu 01", price: "$15", desc: "Classic pasta with fresh herbs and olive oil." },
+    { name: "Food Menu 02", price: "$20", desc: "Creamy carbonara with aged parmesan and bacon." },
+    { name: "Food Menu 03", price: "$35", desc: "Seafood linguine with shrimp, clams, and white wine sauce." },
+    { name: "Food Menu 04", price: "$40", desc: "Homemade ravioli filled with ricotta and spinach." },
+    { name: "Food Menu 05", price: "$55", desc: "Premium ribeye steak with garlic butter and seasonal vegetables." },
+    { name: "Food Menu 06", price: "$15", desc: "Vegetarian risotto with wild mushrooms and truffle oil." },
+    { name: "Food Menu 07", price: "$15", desc: "Wood-fired pizza with fresh mozzarella and basil." },
   ],
   drinkItems: [
-    { name: "Drink Menu 01", price: "$10", desc: "Drinks made from quality ingredients and have a fresh taste." },
-    { name: "Drink Menu 02", price: "$15", desc: "Drinks made from quality ingredients and have a fresh taste." },
-    { name: "Drink Menu 03", price: "$20", desc: "Drinks made from quality ingredients and have a fresh taste." },
-    { name: "Drink Menu 04", price: "$25", desc: "Drinks made from quality ingredients and have a fresh taste." },
-    { name: "Drink Menu 05", price: "$30", desc: "Drinks made from quality ingredients and have a fresh taste." },
-    { name: "Drink Menu 06", price: "$35", desc: "Drinks made from quality ingredients and have a fresh taste." },
-    { name: "Drink Menu 07", price: "$40", desc: "Drinks made from quality ingredients and have a fresh taste." },
+    { name: "Drink Menu 01", price: "$10", desc: "Fresh-squeezed orange juice with sparkling water." },
+    { name: "Drink Menu 02", price: "$15", desc: "Homemade lemonade made with fresh lemons." },
+    { name: "Drink Menu 03", price: "$20", desc: "Signature house wine blend from Italian vineyards." },
+    { name: "Drink Menu 04", price: "$25", desc: "Premium Italian espresso-based cappuccino." },
+    { name: "Drink Menu 05", price: "$30", desc: "Craft Italian margarita with premium tequila." },
+    { name: "Drink Menu 06", price: "$35", desc: "Imported San Pellegrino sparkling water selection." },
+    { name: "Drink Menu 07", price: "$40", desc: "Reserve Italian wine collection with sommelier recommendations." },
   ],
 };
 
@@ -110,11 +110,35 @@ export function createRestaurantMenuPage() {
     console.log("Menu page function executed");
   }
 }
-
+export function createRestaurantContactPage() {
+  const contactContent = `
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>Email:</strong> bakreeniola2@gmail.com
+      </div>
+      <div class="contact-item">
+        <strong>Phone:</strong> 08111321606
+      </div>
+      <div class="contact-item">
+        <strong>Address:</strong> 123 Anywhere ST., Any City, ST 12345
+      </div>
+    </div>
+  `;
+  if (
+    renderPage(
+      "Contact Us",
+      "Get in touch with us!",
+      contactContent,
+    )
+  ) {
+    console.log("Contact page function executed");
+  }
+}
 
 export const pageRenderers = {
   home: createRestaurantHomePage,
   menu: createRestaurantMenuPage,
+  contact: createRestaurantContactPage,
 };
 
 export function notifyMissingPage(pageName) {
