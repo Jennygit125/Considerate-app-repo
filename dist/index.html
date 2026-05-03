@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mija's Pasta</title>
+    <meta
+        name="description"
+        content="Mija's Pasta restaurant landing page."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="pasta/logo.avif" as="image" type="image/avif">
+    <link rel="preload" href="pasta/pasta1.avif" as="image" type="image/avif">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-brand">
+            <img
+                src="pasta/logo.avif"
+                alt="Mija's Pasta Logo"
+                class="pasta-logo-img"
+                width="242"
+                height="233"
+                fetchpriority="high"
+                decoding="async"
+            >
+        </div>
+        <button id="logo-btn">Mija's <strong>Pasta</strong></button>
+        <nav>
+            <button id="home-btn">Home</button>
+            <button id="menu-btn">Menu</button>
+            <button id="contact-btn">Contact</button>
+        </nav>
+    </header>
+    <div id="vax"></div>
+    <div class="crossfade-container">
+        <img
+            src="pasta/pasta1.avif"
+            alt=""
+            class="hero-image is-primary"
+            fetchpriority="high"
+            decoding="async"
+        >
+        <img
+            data-src="pasta/pasta2.webp"
+            alt=""
+            class="hero-image"
+            decoding="async"
+            aria-hidden="true"
+        >
+        <img
+            data-src="pasta/pasta3.webp"
+            alt=""
+            class="hero-image"
+            decoding="async"
+            aria-hidden="true"
+        >
+        <img
+            data-src="pasta/pasta4.avif"
+            alt=""
+            class="hero-image"
+            decoding="async"
+            aria-hidden="true"
+        >
+        <img
+            data-src="pasta/pasta5.avif"
+            alt=""
+            class="hero-image"
+            decoding="async"
+            aria-hidden="true"
+        >
+
+        <div class ="content">
+            <div id="pasta"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
